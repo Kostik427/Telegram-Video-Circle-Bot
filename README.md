@@ -30,18 +30,54 @@
    
 7. Бот скачает видео, преобразует его в видеокружок и отправит обратно вам.
 
-## Структура проекта
-* `main.py`: основной файл с кодом.
-* `config.py`: хранение api.
-* `handlers.py`: обработчик событий.
-  
-* `requirements.txt`: файл с необходимыми для работы бота библиотеками.
-* `input_video.mp4`: временный файл, в который бот скачивает полученное видео.
-* `output_video.mp4`: временный файл, в который бот сохраняет обработанное видео.
+## Technical Details
 
+### Performance Optimizations
+- Chunk-based video processing with parallel execution
+- Efficient memory management with frame buffering
+- OpenCV-based frame processing for optimal performance
+- Asynchronous operations for better responsiveness
+
+### Features
+- Supports videos of various formats and aspect ratios
+- Automatic video resizing and circular masking
+- Progress tracking during processing
+- File size validation
+- Proper error handling and user feedback
+- Temporary file cleanup
+
+### Configuration
+The bot uses several configuration dictionaries that can be easily modified:
+- `PATH_CONFIG`: File and directory paths
+- `VIDEO_CONFIG`: Video processing parameters
+- `FFMPEG_CONFIG`: Video encoding settings
+- `MESSAGE_CONFIG`: User interface messages
+
+### System Requirements
+- Python 3.7+
+- OpenCV (cv2)
+- FFmpeg
+- Telegram Bot API library
+- Sufficient disk space for temporary files
+- Memory according to video size being processed
+
+### Error Handling
+The bot includes comprehensive error handling for:
+- File size limitations
+- Processing errors
+- Network timeouts
+- Resource cleanup
+- Invalid video formats
+
+### Logging
+Implemented detailed logging system for:
+- Processing progress
+
+- Error tracking
+- System diagnostics
+- Performance monitoring
 
 Лицензия
-
 Этот проект лицензирован под MIT License - подробности смотрите в файле `LICENSE`.
 
 Контакты
